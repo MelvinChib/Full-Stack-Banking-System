@@ -25,12 +25,17 @@ import java.util.List;
  * @since 1.0.0
  */
 @Entity
-@Table(name = "accounts")
+@Table(name = "accounts", indexes = {
+    @Index(name = "idx_account_number", columnList = "accountNumber", unique = true),
+    @Index(name = "idx_account_user", columnList = "user_id"),
+    @Index(name = "idx_account_type", columnList = "accountType"),
+    @Index(name = "idx_account_active", columnList = "active")
+})
 @Data
 @EqualsAndHashCode(exclude = {"transactions", "fromTransfers", "toTransfers"})
 @ToString(exclude = {"transactions", "fromTransfers", "toTransfers"})
 @EntityListeners(AuditingEntityListener.class)
-public class Account {
+public class Account extends BaseEntity {
 
     /** Unique identifier for the account */
     @Id

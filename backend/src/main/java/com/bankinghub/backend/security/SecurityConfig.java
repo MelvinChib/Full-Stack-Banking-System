@@ -31,6 +31,7 @@ public class SecurityConfig {
 
     private final CustomUserDetailsService userDetailsService;
     private final AuthEntryPointJwt unauthorizedHandler;
+    private final RateLimitingFilter rateLimitingFilter;
 
     @Bean
     public JwtAuthenticationFilter authenticationJwtTokenFilter() {
@@ -71,6 +72,7 @@ public class SecurityConfig {
             );
 
         http.authenticationProvider(authenticationProvider());
+        http.addFilterBefore(rateLimitingFilter, UsernamePasswordAuthenticationFilter.class);
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

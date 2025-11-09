@@ -24,12 +24,16 @@ import java.util.List;
  * @since 1.0.0
  */
 @Entity
-@Table(name = "users")
+@Table(name = "users", indexes = {
+    @Index(name = "idx_user_email", columnList = "email", unique = true),
+    @Index(name = "idx_user_role", columnList = "role"),
+    @Index(name = "idx_user_enabled", columnList = "enabled")
+})
 @Data
 @EqualsAndHashCode(exclude = {"accounts", "bills", "budgets"})
 @ToString(exclude = {"accounts", "bills", "budgets"})
 @EntityListeners(AuditingEntityListener.class)
-public class User {
+public class User extends BaseEntity {
 
     /** Unique identifier for the user */
     @Id

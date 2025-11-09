@@ -11,13 +11,14 @@ import com.bankinghub.backend.repository.UserRepository;
 import com.bankinghub.backend.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.SecureRandom;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -25,13 +26,18 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AccountService {
 
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
+    
     private final AccountRepository accountRepository;
     private final UserRepository userRepository;
+    
+    @Value("${app.bank.account.number-prefix:MBZ}")
+    private String accountNumberPrefix;
 
     @Transactional
     public AccountResponseDTO createAccount(AccountRequestDTO accountRequest) {
         User currentUser = getCurrentUser();
-        log.info("Creating account for user: {}", currentUser.getEmail());
+        log.debug("Creating account for user ID: {}", currentUser.getId());
 
         Account account = new Account();
         account.setUser(currentUser);
@@ -44,7 +50,7 @@ public class AccountService {
         account.setAccountNumber(generateAccountNumber());
 
         Account savedAccount = accountRepository.save(account);
-        log.info("Account created successfully: {}", savedAccount.getAccountNumber());
+        log.info("Account created successfully with ID: {}", savedAccount.getId());
 
         return convertToAccountResponse(savedAccount);
     }
@@ -80,7 +86,7 @@ public class AccountService {
         account.setInterestRate(accountRequest.getInterestRate());
 
         Account updatedAccount = accountRepository.save(account);
-        log.info("Account updated successfully: {}", updatedAccount.getAccountNumber());
+        log.info("Account updated successfully with ID: {}", updatedAccount.getId());
 
         return convertToAccountResponse(updatedAccount);
     }
@@ -97,7 +103,7 @@ public class AccountService {
 
         account.setActive(false);
         accountRepository.save(account);
-        log.info("Account deactivated successfully: {}", account.getAccountNumber());
+        log.info("Account deactivated successfully with ID: {}", account.getId());
     }
 
     private User getCurrentUser() {
@@ -109,19 +115,17 @@ public class AccountService {
     }
 
     private String generateAccountNumber() {
-        String prefix = "MB"; // MelvinBank prefix
-        Random random = new Random();
-        StringBuilder accountNumber = new StringBuilder(prefix);
+        StringBuilder accountNumber = new StringBuilder(accountNumberPrefix);
         
         for (int i = 0; i < 10; i++) {
-            accountNumber.append(random.nextInt(10));
+            accountNumber.append(SECURE_RANDOM.nextInt(10));
         }
         
         // Ensure uniqueness
         while (accountRepository.existsByAccountNumber(accountNumber.toString())) {
-            accountNumber = new StringBuilder(prefix);
+            accountNumber = new StringBuilder(accountNumberPrefix);
             for (int i = 0; i < 10; i++) {
-                accountNumber.append(random.nextInt(10));
+                accountNumber.append(SECURE_RANDOM.nextInt(10));
             }
         }
         
