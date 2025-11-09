@@ -1,6 +1,6 @@
 # 🏦 SwiftBank - Complete Banking Application
 
-A comprehensive full-stack banking application featuring a **React frontend** and **Spring Boot backend** with advanced features including AI customer support, multi-format statement exports, and real-time banking operations.
+**Production-ready banking platform** that lets you manage accounts, transfer money, pay bills, track budgets, and export statements - all with **bank-grade security**. Features AI customer support, rate limiting, audit trails, and comprehensive documentation. Ready to run in 5 minutes with H2, scales to PostgreSQL for production.
 
 ![SwiftBank](https://img.shields.io/badge/SwiftBank-Banking-blue.svg)
 ![Java](https://img.shields.io/badge/Java-17-orange.svg)
