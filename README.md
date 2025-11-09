@@ -11,48 +11,48 @@
 ## 🌟 **Key Features**
 
 ### 🔐 **Authentication & Security**
-- ✅ JWT-based authentication with secure token management
-- ✅ Password encryption (BCrypt with strength 12)
-- ✅ Role-based access control (User/Admin)
-- ✅ Input validation and sanitization
-- ✅ CORS protection and security headers
+- JWT-based authentication with secure token management
+- Password encryption (BCrypt with strength 12)
+- Role-based access control (User/Admin)
+- Input validation and sanitization
+- CORS protection and security headers
 
 ### 🏦 **Core Banking Features**
-- ✅ **Multi-Account Management**: Checking, Savings, Credit Card, Loan, Investment accounts
-- ✅ **Account Operations**: Create, view, update, and deactivate accounts
-- ✅ **Transaction Processing**: Comprehensive transaction management
-- ✅ **Bill Management**: Schedule and pay bills with auto-pay options
-- ✅ **Budget Tracking**: Category-based budgeting with alerts
-- ✅ **Fund Transfers**: Internal and external money transfers
+- **Multi-Account Management**: Checking, Savings, Credit Card, Loan, Investment accounts
+- **Account Operations**: Create, view, update, and deactivate accounts
+- **Transaction Processing**: Comprehensive transaction management
+- **Bill Management**: Schedule and pay bills with auto-pay options
+- **Budget Tracking**: Category-based budgeting with alerts
+- **Fund Transfers**: Internal and external money transfers
 
 ### 🤖 **AI Customer Support**
-- ✅ **Intelligent Chatbot**: AI-powered customer support with natural language processing
-- ✅ **Context-Aware Responses**: Banking-specific knowledge base
-- ✅ **Quick Help Topics**: Pre-defined common queries
-- ✅ **Human Agent Escalation**: Automatic detection of complex issues
-- ✅ **Category-Based Support**: Organized support by banking topics
+- **Intelligent Chatbot**: AI-powered customer support with natural language processing
+- **Context-Aware Responses**: Banking-specific knowledge base
+- **Quick Help Topics**: Pre-defined common queries
+- **Human Agent Escalation**: Automatic detection of complex issues
+- **Category-Based Support**: Organized support by banking topics
 
 ### 📄 **Advanced Statement Export**
-- ✅ **PDF Export**: Professional formatted statements with bank letterhead
-- ✅ **CSV Export**: Spreadsheet-compatible data for analysis
-- ✅ **Text Export**: Plain text format with transaction summaries
-- ✅ **Date Range Filtering**: Custom period selection
-- ✅ **Account Selection**: Export statements for any account
+- **PDF Export**: Professional formatted statements with bank letterhead
+- **CSV Export**: Spreadsheet-compatible data for analysis
+- **Text Export**: Plain text format with transaction summaries
+- **Date Range Filtering**: Custom period selection
+- **Account Selection**: Export statements for any account
 
 ### 🎨 **Modern Frontend**
-- ✅ **React 18**: Latest React features with hooks and context
-- ✅ **Tailwind CSS**: Responsive, utility-first styling
-- ✅ **FNB-inspired theme**: Light, professional teal/white palette with orange accents
-- ✅ **Real-time Updates**: Dynamic UI updates
-- ✅ **Mobile Responsive**: Optimized for all device sizes
-- ✅ **Intuitive UX**: User-friendly interface design
+- **React 18**: Latest React features with hooks and context
+- **Tailwind CSS**: Responsive, utility-first styling
+- **FNB-inspired theme**: Light, professional teal/white palette with orange accents
+- **Real-time Updates**: Dynamic UI updates
+- **Mobile Responsive**: Optimized for all device sizes
+- **Intuitive UX**: User-friendly interface design
 
 ### 🚀 **Backend Architecture**
-- ✅ **Spring Boot 3.2**: Modern Java framework
-- ✅ **Layered Architecture**: Clear separation of concerns
-- ✅ **JPA/Hibernate**: Advanced ORM with relationships
-- ✅ **Global Exception Handling**: Structured error responses
-- ✅ **API Documentation**: Swagger/OpenAPI integration
+- **Spring Boot 3.2**: Modern Java framework
+- **Layered Architecture**: Clear separation of concerns
+- **JPA/Hibernate**: Advanced ORM with relationships
+- **Global Exception Handling**: Structured error responses
+- **API Documentation**: Swagger/OpenAPI integration
 
 ## 🏗️ **Architecture Overview**
 
@@ -633,7 +633,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 1. 🍴 Fork the repository
 2. 🌿 Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. ✅ Commit your changes (`git commit -m 'Add amazing feature'`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. 📤 Push to the branch (`git push origin feature/amazing-feature`)
 5. 🔀 Open a Pull Request
 
@@ -658,7 +658,7 @@ For support and questions:
 
 ## 🔒 **Security Features (v2.0)**
 
-✅ **All security vulnerabilities fixed:**
+**All security vulnerabilities fixed:**
 - No hardcoded credentials (all externalized to environment variables)
 - SQL injection protection (parameterized queries via JPA)
 - XSS protection (input sanitization and validation)
@@ -741,7 +741,7 @@ npm install
 - ⚡ **Fast & Reliable**: High-performance architecture
 - 🔧 **Developer-Friendly**: Well-documented and maintainable code
 - 🌍 **Open Source**: Community-driven development
-- ✅ **Production-Ready**: Fully tested and security-audited
+- **Production-Ready**: Fully tested and security-audited
 
 **SwiftBank - Banking Made Simple & Secure** 🇿🇲
 
