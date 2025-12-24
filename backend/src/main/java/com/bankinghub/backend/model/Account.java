@@ -32,7 +32,7 @@ import java.util.List;
     @Index(name = "idx_account_active", columnList = "active")
 })
 @Data
-@EqualsAndHashCode(exclude = {"transactions", "fromTransfers", "toTransfers"})
+@EqualsAndHashCode(callSuper = false, exclude = {"transactions", "fromTransfers", "toTransfers"})
 @ToString(exclude = {"transactions", "fromTransfers", "toTransfers"})
 @EntityListeners(AuditingEntityListener.class)
 public class Account extends BaseEntity {
@@ -67,6 +67,10 @@ public class Account extends BaseEntity {
     @Column(nullable = false)
     private Boolean active = true;
 
+
+
+
+
     /** Credit limit for credit card accounts */
     @Column(precision = 15, scale = 2)
     private BigDecimal creditLimit;
@@ -100,6 +104,7 @@ public class Account extends BaseEntity {
     /** List of transfers received by this account */
     @OneToMany(mappedBy = "toAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Transfer> toTransfers;
+
 
     /**
      * Account type enumeration.

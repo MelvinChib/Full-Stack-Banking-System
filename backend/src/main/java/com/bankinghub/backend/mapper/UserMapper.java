@@ -21,6 +21,8 @@ public interface UserMapper {
     @Mapping(target = "budgets", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "createdBy", ignore = true)
+    @Mapping(target = "lastModifiedBy", ignore = true)
     User toEntity(UserRequestDTO dto);
 
     UserResponseDTO toResponseDTO(User user);
@@ -39,5 +41,7 @@ public interface UserMapper {
     @Mapping(target = "budgets", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "createdBy", ignore = true)
+    @Mapping(target = "lastModifiedBy", ignore = true)
     void updateEntityFromDTO(UserRequestDTO dto, @MappingTarget User user);
 }

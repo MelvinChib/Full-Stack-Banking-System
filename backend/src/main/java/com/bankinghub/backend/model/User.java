@@ -30,7 +30,7 @@ import java.util.List;
     @Index(name = "idx_user_enabled", columnList = "enabled")
 })
 @Data
-@EqualsAndHashCode(exclude = {"accounts", "bills", "budgets"})
+@EqualsAndHashCode(callSuper = false, exclude = {"accounts", "bills", "budgets"})
 @ToString(exclude = {"accounts", "bills", "budgets"})
 @EntityListeners(AuditingEntityListener.class)
 public class User extends BaseEntity {

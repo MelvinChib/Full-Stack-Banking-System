@@ -48,6 +48,11 @@ public abstract class BaseEntity {
     @Column(name = "last_modified_by")
     private String lastModifiedBy;
 
+
+    @LastModifiedDate
+    @Column
+    private String lastmodifiedBy;
+
     /**
      * JPA lifecycle callback executed before entity persistence.
      * Sets creation and update timestamps.

@@ -14,6 +14,8 @@ public interface AccountMapper {
     @Mapping(target = "active", constant = "true")
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "createdBy", ignore = true)
+    @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "user", ignore = true) // Will be set in service
     @Mapping(target = "transactions", ignore = true)
     @Mapping(target = "fromTransfers", ignore = true)
@@ -30,6 +32,9 @@ public interface AccountMapper {
     @Mapping(target = "balance", ignore = true) // Balance shouldn't be updated via DTO
     @Mapping(target = "active", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "createdBy", ignore = true)
+    @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "user", ignore = true)
     @Mapping(target = "transactions", ignore = true)
     @Mapping(target = "fromTransfers", ignore = true)
